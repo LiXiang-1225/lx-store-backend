@@ -1,0 +1,1 @@
+INSERT INTO user (uid, username, password) VALUES (1, 'lixiang', 'password')
