@@ -1,5 +1,6 @@
 package com.lixiang.lxstorebackend.controller;
 
+import com.lixiang.lxstorebackend.common.Result;
 import com.lixiang.lxstorebackend.entity.UserEntity;
 import com.lixiang.lxstorebackend.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -24,13 +25,14 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
-//    @Autowired
-//    UserRepository userRepository;
-//    @PostConstruct
+
+    //    @Autowired
+    //    UserRepository userRepository;
+    //    @PostConstruct
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<UserEntity> getAllUsers() {
-//        System.out.println( userRepository.findAll());
-         return userService.getAllUsers();
+    public Result getAllUsers() {
+        List<UserEntity> userEntityList = userService.getAllUsers();
+        return Result.ok().data("items", userEntityList).message("用户列表");
     }
 }
