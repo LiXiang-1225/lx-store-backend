@@ -23,4 +23,8 @@ public class UserService {
                 .username(username).password(password).build();
         userRepository.save(user);
     }
+
+    public void deleteUser(Integer uid) {
+        userRepository.deleteById(uid);
+    }
 }

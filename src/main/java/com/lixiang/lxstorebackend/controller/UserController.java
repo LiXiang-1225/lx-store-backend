@@ -43,4 +43,11 @@ public class UserController {
             return Result.error().message("用户名重复");
         }
     }
+
+    @DeleteMapping
+    @ResponseStatus(HttpStatus.OK)
+    public Result deleteUser(@RequestParam Integer uid) {
+        userService.deleteUser(uid);
+        return Result.ok();
+    }
 }
