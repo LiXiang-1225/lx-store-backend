@@ -16,7 +16,7 @@ import java.util.Objects;
 @Builder
 public class UserEntity extends BaseEntity {
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer uid;
 
     @Column(name = "username")

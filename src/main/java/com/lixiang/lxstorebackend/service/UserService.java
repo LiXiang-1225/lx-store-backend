@@ -18,9 +18,9 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public void addUser(String userName, String password) {
+    public void addUser(String username, String password) {
         UserEntity user = UserEntity.builder()
-                .username(userName).password(password).build();
+                .username(username).password(password).build();
         userRepository.save(user);
     }
 }

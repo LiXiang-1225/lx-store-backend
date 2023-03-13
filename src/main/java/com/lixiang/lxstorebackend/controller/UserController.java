@@ -35,12 +35,11 @@ public class UserController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
-    public Result createUser(@RequestParam String userName, @RequestParam String password) {
+    public Result createUser(@RequestParam String username, @RequestParam String password) {
         try {
-            userService.addUser(userName,password);
+            userService.addUser(username,password);
             return Result.ok();
         } catch (Exception e) {
-//            throw new EMSException(e);
             return Result.error().message("用户名重复");
         }
     }
