@@ -50,4 +50,11 @@ public class UserController {
         userService.deleteUser(uid);
         return Result.ok();
     }
+
+    @PutMapping
+    @ResponseStatus(HttpStatus.OK)
+    public Result updateUserInfo(@RequestBody UserEntity user) {
+        userService.updateUserInfo(user);
+        return Result.ok();
+    }
 }

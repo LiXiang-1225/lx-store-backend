@@ -27,4 +27,11 @@ public class UserService {
     public void deleteUser(Integer uid) {
         userRepository.deleteById(uid);
     }
+
+    public void updateUserInfo(UserEntity user) {
+//        UserEntity user1 = UserEntity.builder()
+//                .uid(user.getUid())
+//                .username(user.getUsername()).password(user.getPassword()).build();
+        userRepository.save(user);
+    }
 }
