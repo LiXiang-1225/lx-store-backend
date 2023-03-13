@@ -25,8 +25,8 @@ public class UserEntity extends BaseEntity {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "salt")
-    private String salt;
+//    @Column(name = "salt")
+//    private String salt;
 
     @Column(name = "phone")
     private String phone;
@@ -40,8 +40,8 @@ public class UserEntity extends BaseEntity {
     @Column(name = "avatar")
     private String avatar;
 
-    @Column(name = "is_delete")
-    private Integer isDelete;
+//    @Column(name = "is_delete")
+//    private Integer isDelete;
 
     @Override
     public boolean equals(Object o) {
