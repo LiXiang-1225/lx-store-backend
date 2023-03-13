@@ -7,6 +7,7 @@ import lombok.Getter;
 public enum ResultCodeEnum {
     SUCCESS(200, "success"),
     ERROR(500, "internal server error"),
+    NULL_POINT(600,"null pointer exception"),
     ;
 
     private final Integer code;

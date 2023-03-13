@@ -5,10 +5,7 @@ import com.lixiang.lxstorebackend.entity.UserEntity;
 import com.lixiang.lxstorebackend.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -34,5 +31,17 @@ public class UserController {
     public Result getAllUsers() {
         List<UserEntity> userEntityList = userService.getAllUsers();
         return Result.ok().data("items", userEntityList).message("用户列表");
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.OK)
+    public Result createUser(@RequestParam String userName, @RequestParam String password) {
+        try {
+            userService.addUser(userName,password);
+            return Result.ok();
+        } catch (Exception e) {
+//            throw new EMSException(e);
+            return Result.error().message("用户名重复");
+        }
     }
 }

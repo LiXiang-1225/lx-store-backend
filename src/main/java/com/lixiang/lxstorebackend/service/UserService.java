@@ -17,4 +17,10 @@ public class UserService {
     public List<UserEntity> getAllUsers() {
         return userRepository.findAll();
     }
+
+    public void addUser(String userName, String password) {
+        UserEntity user = UserEntity.builder()
+                .username(userName).password(password).build();
+        userRepository.save(user);
+    }
 }

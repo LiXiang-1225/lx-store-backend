@@ -3,30 +3,45 @@ package com.lixiang.lxstorebackend.entity;
 import lombok.*;
 import org.hibernate.Hibernate;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Getter
 @Setter
 @RequiredArgsConstructor
+@AllArgsConstructor
 @ToString
-@Entity(name = "user")
-public class UserEntity {
+@Entity
+@Table(name = "user")
+@Builder
+public class UserEntity extends BaseEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer uid;
+
+    @Column(name = "username")
     private String username;
+
+    @Column(name = "password")
     private String password;
+
+    @Column(name = "salt")
     private String salt;
+
+    @Column(name = "phone")
     private String phone;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "gender")
     private Integer gender;
+
+    @Column(name = "avatar")
     private String avatar;
-    private Integer is_delete;
+
+    @Column(name = "is_delete")
+    private Integer isDelete;
 
     @Override
     public boolean equals(Object o) {
