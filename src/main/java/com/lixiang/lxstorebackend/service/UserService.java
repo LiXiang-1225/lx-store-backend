@@ -28,10 +28,28 @@ public class UserService {
         userRepository.deleteById(uid);
     }
 
-    public void updateUserInfo(UserEntity user) {
-//        UserEntity user1 = UserEntity.builder()
-//                .uid(user.getUid())
-//                .username(user.getUsername()).password(user.getPassword()).build();
+    public void updateUserInfo(Integer uid, UserEntity user) {
+        user.setUid(uid);
+//        UserEntity userEntity = userRepository.findById(uid).orElseThrow();
+//        if (user.getUsername() != null) {
+//            userEntity.setUsername(user.getUsername());
+//        }
+//        if (user.getPassword() != null) {
+//            userEntity.setPassword(user.getPassword());
+//        }
+//        if (user.getPhone() != null) {
+//            userEntity.setPhone(user.getPhone());
+//        }
+//        if (user.getEmail() != null) {
+//            userEntity.setEmail(user.getEmail());
+//        }
+//        if (user.getGender() != null) {
+//            userEntity.setGender(user.getGender());
+//        }
+//        if (user.getAvatar() != null) {
+//            userEntity.setAvatar(user.getAvatar());
+//        }
+//        userRepository.save(userEntity);
         userRepository.save(user);
     }
 }

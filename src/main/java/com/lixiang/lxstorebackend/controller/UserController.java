@@ -51,10 +51,10 @@ public class UserController {
         return Result.ok();
     }
 
-    @PutMapping
+    @PutMapping("/{uid}")
     @ResponseStatus(HttpStatus.OK)
-    public Result updateUserInfo(@RequestBody UserEntity user) {
-        userService.updateUserInfo(user);
+    public Result updateUserInfo(@PathVariable Integer uid ,@RequestBody UserEntity user) {
+        userService.updateUserInfo(uid,user);
         return Result.ok();
     }
 }
