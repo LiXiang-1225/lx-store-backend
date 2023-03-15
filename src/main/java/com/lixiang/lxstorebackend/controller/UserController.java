@@ -18,6 +18,7 @@ import java.util.List;
 //        RestController的作用：包含上面两个的作用，且支持Restful风格的数据提交方式
 //@Controller
 @RestController
+@CrossOrigin
 @RequestMapping("/api/users")
 @RequiredArgsConstructor
 public class UserController {
@@ -40,7 +41,7 @@ public class UserController {
             userService.addUser(user);
             return Result.ok();
         } catch (Exception e) {
-            return Result.error().message("用户名重复");
+            return Result.error().message("用户注册失败");
         }
     }
 
